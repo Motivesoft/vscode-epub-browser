@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import * as path from 'path';
 import * as epubfs from './epubHandler';
 
 export function activate(context: vscode.ExtensionContext) {
@@ -19,7 +20,8 @@ export function activate(context: vscode.ExtensionContext) {
 			return;
 		}
 
-		vscode.window.showInformationMessage(`Mounting ${epubUri}`);
+		const filename = path.basename(epubUri.fsPath);
+		vscode.window.showInformationMessage(`Mounting '${filename}'`);
 
 		// Prepare a workspace to hold the book's contents
 		const workspaceFolderUri = vscode.Uri.parse(`${filesystemScheme}:/?${epubUri}`);
@@ -36,10 +38,11 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Unmount command
 	context.subscriptions.push(vscode.commands.registerCommand('vscode-epub-browser.unmount', (workspaceFolderUri: vscode.Uri) => {
-		vscode.window.showInformationMessage(`Unmounting ${workspaceFolderUri}`);
-
 		const workspaceFolder = vscode.workspace.getWorkspaceFolder(workspaceFolderUri);
 		if (workspaceFolder !== undefined) {
+			const filename = path.basename(workspaceFolderUri.query);
+			vscode.window.showInformationMessage(`Unmounting '${filename}'`);
+	
 			vscode.workspace.updateWorkspaceFolders(workspaceFolder?.index, 1);
 		}
 	}));
