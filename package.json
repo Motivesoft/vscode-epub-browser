@@ -21,7 +21,19 @@
         "command": "vscode-epub-browser.unmount",
         "title": "Goodbye, Cruel World"
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceExtname == .epub",
+          "command": "vscode-epub-browser.mount"
+        },
+        {
+          "when": "explorerResourceIsRoot",
+          "command": "vscode-epub-browser.unmount"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
