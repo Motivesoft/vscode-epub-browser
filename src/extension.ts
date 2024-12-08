@@ -45,7 +45,7 @@ export function activate(context: vscode.ExtensionContext) {
 			const filename = path.basename(workspaceFolderUri.query);
 			vscode.window.showInformationMessage(`Unmounting '${filename}'`);
 	
-			vscode.workspace.updateWorkspaceFolders(workspaceFolder?.index, 1);
+			vscode.workspace.updateWorkspaceFolders(workspaceFolder.index, 1);
 		}
 	}));
 }
