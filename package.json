@@ -27,12 +27,12 @@
         {
           "when": "resourceExtname == .epub",
           "command": "vscode-epub-browser.mount",
-          "group": "navigation@1"
+          "group": "epub@1"
         },
         {
-          "when": "explorerResourceIsRoot",
+          "when": "resourceScheme == epubfs && explorerResourceIsRoot",
           "command": "vscode-epub-browser.unmount",
-          "group": "navigation@1"
+          "group": "epub@2"
         }
       ]
     }
