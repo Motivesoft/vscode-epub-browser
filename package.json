@@ -15,22 +15,24 @@
     "commands": [
       {
         "command": "vscode-epub-browser.mount",
-        "title": "Hello World"
+        "title": "Mount"
       },
       {
         "command": "vscode-epub-browser.unmount",
-        "title": "Goodbye, Cruel World"
+        "title": "Unmount"
       }
     ],
     "menus": {
       "explorer/context": [
         {
           "when": "resourceExtname == .epub",
-          "command": "vscode-epub-browser.mount"
+          "command": "vscode-epub-browser.mount",
+          "group": "navigation@1"
         },
         {
           "when": "explorerResourceIsRoot",
-          "command": "vscode-epub-browser.unmount"
+          "command": "vscode-epub-browser.unmount",
+          "group": "navigation@1"
         }
       ]
     }

@@ -9,7 +9,7 @@ export class ReadonlyFS implements vscode.FileSystemProvider {
     public watch(_uri: vscode.Uri, _options: { recursive: boolean; excludes: string[]; }): vscode.Disposable {
         return new class {
             dispose() {
-                debugger;
+                // Do nothing
             }
         };
     }
