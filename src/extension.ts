@@ -5,15 +5,12 @@ import * as epubfs from './epubHandler';
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Extension "vscode-epub-browser" is active');
 
-//           "when": "explorerResourceIsRoot && resourceExtname == .epub && resourceScheme == epubfs",
-
-
 	// Register the file system handler for epubs
 	const filesystemScheme = "epubfs";
 	const fileSystem = new epubfs.ReadonlyFS();
 	context.subscriptions.push(vscode.workspace.registerFileSystemProvider(filesystemScheme, fileSystem, { isCaseSensitive: true, isReadonly: true }));
 
-	// Mount command
+	// The mount command
 	context.subscriptions.push(vscode.commands.registerCommand('vscode-epub-browser.mount', (epubUri: vscode.Uri) => {
 		if (epubUri === undefined) {
 			vscode.window.showErrorMessage(`Select an EPUB file to mount`);
@@ -36,8 +33,13 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	}));
 
-	// Unmount command
+	// The unmount command
 	context.subscriptions.push(vscode.commands.registerCommand('vscode-epub-browser.unmount', (workspaceFolderUri: vscode.Uri) => {
+		if (workspaceFolderUri === undefined) {
+			vscode.window.showErrorMessage(`Select a mounted EPUB workspace to unmount`);
+			return;
+		}
+
 		const workspaceFolder = vscode.workspace.getWorkspaceFolder(workspaceFolderUri);
 		if (workspaceFolder !== undefined) {
 			const filename = path.basename(workspaceFolderUri.query);
