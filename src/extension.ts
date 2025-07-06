@@ -3,8 +3,6 @@ import * as path from 'path';
 import * as epubfs from './epubHandler';
 
 export function activate(context: vscode.ExtensionContext) {
-	console.log('Extension "vscode-epub-browser" is active');
-
 	// Register the file system handler for epubs
 	const filesystemScheme = "epubfs";
 	const fileSystem = new epubfs.ReadonlyFS();
