@@ -2,7 +2,7 @@
   "name": "vscode-epub-browser",
   "displayName": "EPUB browser",
   "description": "Browser and reader for EPUB files",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.95.0"
   },
