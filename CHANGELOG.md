@@ -8,5 +8,10 @@
 
 - Update dependencies
 
+## [0.0.3]
+
+- Update dependencies
+
 [0.0.1]: https://github.com/Motivesoft/vscode-epub-browser/releases/tag/v0.0.1
-[0.0.2]: https://github.com/Motivesoft/vscode-epub-browser/releases/tag/v0.0.1
+[0.0.2]: https://github.com/Motivesoft/vscode-epub-browser/releases/tag/v0.0.2
+[0.0.3]: https://github.com/Motivesoft/vscode-epub-browser/releases/tag/v0.0.3
