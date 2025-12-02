@@ -2,11 +2,11 @@
   "name": "vscode-epub-browser",
   "displayName": "EPUB browser",
   "description": "Browser and reader for EPUB files",
-  "version": "0.0.2",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Motivesoft/vscode-epub-browser.git"
-	},
+  "version": "0.0.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Motivesoft/vscode-epub-browser.git"
+  },
   "engines": {
     "vscode": "^1.95.0"
   },
