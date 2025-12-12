@@ -70,5 +70,8 @@
   },
   "dependencies": {
     "jszip": "^3.10.1"
+  },
+  "overrides": {
+    "glob": "^10.5.0"
   }
 }
