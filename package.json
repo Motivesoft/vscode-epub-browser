@@ -3,6 +3,14 @@
   "displayName": "EPUB browser",
   "description": "Browser and reader for EPUB files",
   "version": "0.0.4",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "publisher": "motivesoft",
+  "author": {
+    "name": "ianabrown",
+    "url": "https://github.com/ianabrown"
+  },
+  "homepage": "https://github.com/Motivesoft/vscode-epub-browser/blob/master/README.md",
   "repository": {
     "type": "git",
     "url": "https://github.com/Motivesoft/vscode-epub-browser.git"
